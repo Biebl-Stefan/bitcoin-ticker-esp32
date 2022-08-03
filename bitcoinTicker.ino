@@ -14,8 +14,8 @@
 #define downLED 12
 Adafruit_SSD1306 display (SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);    //Create the display object
 
-const char* ssid = "Jardeen";                                            //Set your WiFi network name and password
-const char* password = "123Tortellini";
+const char* ssid = "NETWORK NAME";                                            //Set your WiFi network name and password
+const char* password = "PASSWORD";
 
 const int httpsPort = 443;                                                          //Bitcoin price API powered by CoinDesk - https://www.coindesk.com/price/bitcoin
 const String url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=USD&include_24hr_change=true";
