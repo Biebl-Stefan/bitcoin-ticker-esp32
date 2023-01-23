@@ -17,7 +17,7 @@ Adafruit_SSD1306 display (SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);    //
 const char* ssid = "NETWORK NAME";                                            //Set your WiFi network name and password
 const char* password = "PASSWORD";
 
-const int httpsPort = 443;                                                          //Bitcoin price API powered by CoinDesk - https://www.coindesk.com/price/bitcoin
+const int httpsPort = 443;                                                    //Bitcoin price API powered by CoingGecko
 const String url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=USD&include_24hr_change=true";
 
 WiFiClient client;                                                            //Create a new WiFi client
@@ -142,11 +142,11 @@ void loop()
 {
 
 
-  Serial.print("Connecting to ");                                                       //Display url on Serial monitor for debugging
+  Serial.print("Connecting to ");                                              //Display url on Serial monitor for debugging
   Serial.println(url);
 
   http.begin(url);
-  int httpCode = http.GET();                                                            //Get crypto price from API
+  int httpCode = http.GET();                                                   //Get crypto price from API
   StaticJsonDocument<2000> doc;
   DeserializationError error = deserializeJson(doc, http.getString());
 
